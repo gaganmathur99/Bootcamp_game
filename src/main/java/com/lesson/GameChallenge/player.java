@@ -11,20 +11,17 @@ public class player {
 	private int health;
 	private String name = "unknown";
 	public int strength = 0;
-	public int grid_size = 5;
+	public int global_grid_size;
 
 	public player() {
-		System.out.println("Player initiated -- without -- name");
-		this.health = 100;
-		setPlayerPosition(grid_size);
+
 	}
 
 	public player(String newName) {
 		name = newName;
 		this.health = 100;
-		//System.out.println(name + " initiated...");
-		setPlayerPosition(grid_size);
-		stats.setcharactersinGame(name, player_position);
+		System.out.println(name + " initiated...");
+		setPlayerPosition(App.globalGridSize);
 	}
 
 	public static int[] setPlayerPosition(int grid_size) {
@@ -39,22 +36,32 @@ public class player {
 		Scanner movement = new Scanner(System.in); // Create a Scanner object
 		System.out.println("Enter 1 to move right, 2 to move left, 3 to move up and 4 to move down ");
 		int userMove = movement.nextInt();
+		System.out.println("here: " + userMove);
 
 		if (userMove == 1) {
+			System.out.println("Move Up prev" + player_position[1]);
 			if (player_position[1] != grid_size - 1) {
+				// System.out.println("Move Up prev" + player_position[1]);
 				player_position[1] += 1;
+				// System.out.println("Move Up" + player_position[1]);
 			}
 		} else if (userMove == 2) {
 			if (player_position[1] != 0) {
+				// System.out.println("Move Down prev" + player_position[1]);
 				player_position[1] -= 1;
+				// System.out.println("Move Down" + player_position[1]);
 			}
 		} else if (userMove == 3) {
 			if (player_position[0] != 0) {
+				// System.out.println("Move left prev" + player_position[0]);
 				player_position[0] -= 1;
+				// System.out.println("Move left" + player_position[0]);
 			}
 		} else if (userMove == 4) {
 			if (player_position[0] != grid_size - 1) {
+				// System.out.println("Move right prev" + player_position[0]);
 				player_position[0] += 1;
+				// System.out.println("Move right" + player_position[0]);
 			}
 
 		} else {
@@ -71,7 +78,7 @@ public class player {
 		int[] treasure_local = new int[2];
 		treasure_local = treasure.treasure_position;
 		if (player_position[0] == treasure_local[0] && player_position[1] == treasure_local[1]) {
-			System.out.println("game win!!");
+			System.out.println("Congratulations! You have found the treasure, well done!");
 			return true;
 		} else {
 			return false;
@@ -82,7 +89,8 @@ public class player {
 		int[] monster_local = new int[2];
 		monster_local = Monster_1.getMonsterPosition();
 		if (player_position[0] == monster_local[0] && player_position[1] == monster_local[1]) {
-			System.out.println("Game Over!!");
+			System.out.println("You come across a massive monster");
+			System.out.println("The monster gobbles you up! Game Over!");
 			return true;
 		} else {
 			return false;

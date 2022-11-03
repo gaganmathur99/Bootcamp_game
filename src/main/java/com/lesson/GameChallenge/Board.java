@@ -3,8 +3,8 @@ package com.lesson.GameChallenge;
 public class Board {
 
 	public int[][] board = null;
-	public int x = 5;
-	public int y = 5;
+	public int x = App.globalGridSize;
+	public int y = App.globalGridSize;
 
 	public Board() {
 		// TODO Auto-generated constructor stub

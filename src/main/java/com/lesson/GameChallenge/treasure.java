@@ -14,7 +14,7 @@ public class treasure {
 
 	private int[] initialize_treasure() {
 		int[] player_position = player.getposition();
-		int grid_size = 5;// stats.grid_size();
+		int grid_size = App.globalGridSize;// stats.grid_size();
 
 		// this.setTreasurePosition();
 		treasure_position[0] = ThreadLocalRandom.current().nextInt(0, grid_size);

@@ -1,18 +1,25 @@
 package com.lesson.GameChallenge;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
+	public static int globalGridSize;
+	
 	public static void main(String[] args) {
-		System.out.println("Enter Your player name to continue - ");
+		
+		
+		System.out.print("Enter Your player name to continue - ");
 		Scanner name = new Scanner(System.in); // Create a Scanner object
 		String player_name = name.nextLine();
 		System.out.println("Welcome to the Game " + player_name + "!");
-		int grid_size=5;
 		
+		System.out.print("Enter the grid size to continue (between 3 and 10) - ");
+		Scanner scan = new Scanner(System.in);
+		globalGridSize = scan.nextInt();
 		
-		player p1 = new player(player_name);
+		System.out.println(globalGridSize + " - grid size initilaized");
+
+		player p1 = new player("player_name");
 
 		int[] test = p1.getposition();
 		// System.out.println( "Grr x position " + test[0] + " Grr y position " +
@@ -28,31 +35,37 @@ public class App {
 
 		Monster_1 Grinch = new Monster_1("Grinch",
 				"You're gonna die! I'm going to throw up, and then You're gonna die!");
-//		Monster_1 frank = new Monster_1("frank",
-//				"You're gonna die! I'm going to throw up, and then You're gonna die!");
 		// int[] test3 = Grinch.getMonsterPosition();
 		// System.out.println( "Monster x position " + test3[0] + " Monster y position "
 		// + test3[1] );
 
-		 Board b1 = new Board();
+		Board b1 = new Board();
 		// Board.updateBoard(test,test2,test3);
-//
-//		while (player.game_win() != true && player.game_lose() != true) {
-//			treasure.player_distance();
-//			p1.updatePlayerPosition(grid_size);
-//			// b1.updateBoard(player.getposition(),
-//			// treasure.getTreasurePosition(),Monster_1.getMonsterPosition());
-//			// treasure.player_distance();
-//		}
+
+		while (player.game_win() != true && player.game_lose() != true) {
+
+
+			p1.updatePlayerPosition(globalGridSize);
+			// b1.updateBoard(player.getposition(),
+			// treasure.getTreasurePosition(),Monster_1.getMonsterPosition());
+			treasure.player_distance();
+//        	Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+//            System.out.println("Enter 1 to move up, 2 to move down, 3 to move left, 4 to move right");
+//            String userMove = myObj.nextLine();
+//            if(userMove == "1") {
+//            	start_game.characterMoveUp();
+//            } else if(userMove == "2") {
+//            	start_game.characterMoveDown();
+//            } else if(userMove == "3") {
+//            	start_game.characterMoveLeft();
+//            } else if(userMove == "4") {
+//            	start_game.characterMoveRight();
+//            } else {
+//            	System.out.println("Invalid Move");
+//            }
+		}
 		
-		stats s1 = new stats();
-		
-		//s1.setcharactersinGame("player",p1.getposition());
-		
-		System.out.println( Arrays.equals(p1.getposition(),Monster_1.getMonsterPosition() ));
-		s1.newCharacter("c1", 5);
-		s1.newCharacter("c2", 5);
-		s1.newCharacter("c3", 5);
-		s1.getcharactersinGame();
+
 	}
+
 }
