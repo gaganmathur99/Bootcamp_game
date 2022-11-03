@@ -1,6 +1,6 @@
 package com.lesson.GameChallenge;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -8,7 +8,6 @@ public class player {
 
 	public static int[] player_position = new int[2];
 	// public static boolean game_win;
-	private int health;
 	private String name = "unknown";
 	public int strength = 0;
 	public int global_grid_size;
@@ -19,14 +18,11 @@ public class player {
 
 	public player(String newName) {
 		name = newName;
-		this.health = 100;
 		System.out.println(name + " initiated...");
 		setPlayerPosition(App.globalGridSize);
 	}
 
 	public static int[] setPlayerPosition(int grid_size) {
-		// TODO Auto-generated method stub
-		// System.out.println(player_position[0]);
 		player_position[0] = ThreadLocalRandom.current().nextInt(0, grid_size);
 		player_position[1] = ThreadLocalRandom.current().nextInt(0, grid_size);
 		return player_position;
@@ -39,29 +35,20 @@ public class player {
 		System.out.println("here: " + userMove);
 
 		if (userMove == 1) {
-			System.out.println("Move Up prev" + player_position[1]);
 			if (player_position[1] != grid_size - 1) {
-				// System.out.println("Move Up prev" + player_position[1]);
 				player_position[1] += 1;
-				// System.out.println("Move Up" + player_position[1]);
 			}
 		} else if (userMove == 2) {
 			if (player_position[1] != 0) {
-				// System.out.println("Move Down prev" + player_position[1]);
 				player_position[1] -= 1;
-				// System.out.println("Move Down" + player_position[1]);
 			}
 		} else if (userMove == 3) {
 			if (player_position[0] != 0) {
-				// System.out.println("Move left prev" + player_position[0]);
 				player_position[0] -= 1;
-				// System.out.println("Move left" + player_position[0]);
 			}
 		} else if (userMove == 4) {
 			if (player_position[0] != grid_size - 1) {
-				// System.out.println("Move right prev" + player_position[0]);
 				player_position[0] += 1;
-				// System.out.println("Move right" + player_position[0]);
 			}
 
 		} else {

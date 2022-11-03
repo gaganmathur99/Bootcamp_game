@@ -9,7 +9,7 @@ public class Board {
 	public Board() {
 		// TODO Auto-generated constructor stub
 
-		setBoard();
+		
 		generateBoard(player.player_position, treasure.treasure_position, Monster_1.monster_position);
 
 	}

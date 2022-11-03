@@ -7,16 +7,14 @@ public class treasure {
 	public static int[] treasure_position = new int[2];
 
 	public treasure() {
-		// int[] treasure_position = new int[2];
 		treasure_position = initialize_treasure();
 		stats.setcharactersinGame("Treasure", treasure_position);
 	}
 
 	private int[] initialize_treasure() {
 		int[] player_position = player.getposition();
-		int grid_size = App.globalGridSize;// stats.grid_size();
-
-		// this.setTreasurePosition();
+		int grid_size = App.globalGridSize;
+		
 		treasure_position[0] = ThreadLocalRandom.current().nextInt(0, grid_size);
 		treasure_position[1] = ThreadLocalRandom.current().nextInt(0, grid_size);
 
