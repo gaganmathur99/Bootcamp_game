@@ -21,20 +21,20 @@ public class App {
 		
 		System.out.println(globalGridSize + " - grid size initilaized");
 
-		player p1 = new player(player_name);
+		Player p1 = new Player(player_name);
 
-		treasure tres = new treasure();
-		Monster_1 Grinch = new Monster_1("mon", "mons");
+		Treasure tres = new Treasure();
+		Monster Grinch = new Monster("mon", "mons");
 		Board b1 = new Board();
 		
 		b1.setBoard();
 
-		while (player.game_win() != true && player.game_lose() != true) {
+		while (Player.game_win() != true && Player.game_lose() != true) {
 
 
 			p1.updatePlayerPosition(globalGridSize);
 
-			treasure.player_distance();
+			Treasure.player_distance();
 
 		}
 		name.close();

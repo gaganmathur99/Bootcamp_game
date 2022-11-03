@@ -1,10 +1,9 @@
 package com.lesson.GameChallenge;
 
-
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class player {
+public class Player {
 
 	public static int[] player_position = new int[2];
 	// public static boolean game_win;
@@ -12,11 +11,11 @@ public class player {
 	public int strength = 0;
 	public int global_grid_size;
 
-	public player() {
+	public Player() {
 
 	}
 
-	public player(String newName) {
+	public Player(String newName) {
 		name = newName;
 		System.out.println(name + " initiated...");
 		setPlayerPosition(App.globalGridSize);
@@ -63,7 +62,7 @@ public class player {
 
 	public static boolean game_win() {
 		int[] treasure_local = new int[2];
-		treasure_local = treasure.treasure_position;
+		treasure_local = Treasure.treasure_position;
 		if (player_position[0] == treasure_local[0] && player_position[1] == treasure_local[1]) {
 			System.out.println("Congratulations! You have found the treasure, well done!");
 			return true;
@@ -74,7 +73,7 @@ public class player {
 
 	public static boolean game_lose() {
 		int[] monster_local = new int[2];
-		monster_local = Monster_1.getMonsterPosition();
+		monster_local = Monster.getMonsterPosition();
 		if (player_position[0] == monster_local[0] && player_position[1] == monster_local[1]) {
 			System.out.println("You come across a massive monster");
 			System.out.println("The monster gobbles you up! Game Over!");

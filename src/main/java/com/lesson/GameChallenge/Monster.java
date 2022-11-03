@@ -2,21 +2,21 @@ package com.lesson.GameChallenge;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Monster_1 {
+public class Monster {
 
 	public String name;
 	public String Greet;
 	public static int[] monster_position = new int[2];
 
-	public Monster_1(String name, String Greet) {
+	public Monster(String name, String Greet) {
 		this.name = name;
 		this.Greet = Greet;
 		monster_position = setMonsterPosition();
 	}
 
 	public int[] setMonsterPosition() {
-		int[] player_position = player.getposition();
-		int[] treasure_position = treasure.getTreasurePosition();
+		int[] player_position = Player.getposition();
+		int[] treasure_position = Treasure.getTreasurePosition();
 		int grid_size = App.globalGridSize;// stats.grid_size();
 
 		// this.setTreasurePosition();

@@ -2,17 +2,17 @@ package com.lesson.GameChallenge;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class treasure {
+public class Treasure {
 
 	public static int[] treasure_position = new int[2];
 
-	public treasure() {
+	public Treasure() {
 		treasure_position = initialize_treasure();
 		stats.setcharactersinGame("Treasure", treasure_position);
 	}
 
 	private int[] initialize_treasure() {
-		int[] player_position = player.getposition();
+		int[] player_position = Player.getposition();
 		int grid_size = App.globalGridSize;
 		
 		treasure_position[0] = ThreadLocalRandom.current().nextInt(0, grid_size);
@@ -31,7 +31,7 @@ public class treasure {
 
 	public static void player_distance() {
 		int[] player_local = new int[2];
-		player_local = player.getposition();
+		player_local = Player.getposition();
 		double distance;
 		double distance_x = treasure_position[0] - player_local[0];
 		double distance_y = treasure_position[1] - player_local[1];
