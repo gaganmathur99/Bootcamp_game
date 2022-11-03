@@ -18,8 +18,6 @@ public class AppTest
 	void test() {
 		assertTrue(true);
 	}
-	@Test
-	void testfail() {
-		assertTrue(false);
-	}
+	
+	
 }
