@@ -22,4 +22,9 @@ public class AppTest
 	void testfail() {
 		assertTrue(false);
 	}
+	
+	@Test
+	void testingfail() {
+		assertTrue(false);
+	}
 }
