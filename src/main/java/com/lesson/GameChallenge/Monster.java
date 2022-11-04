@@ -49,12 +49,12 @@ public class Monster {
 
 		double distance_left;
 		double distance_x_left = monster_position[0] - player_position[0];
-		double distance_y_left = monster_position[1]+1 - player_position[1];
+		double distance_y_left = monster_position[1]-1 - player_position[1];
 		distance_left = Math.sqrt(Math.pow(distance_y_left, 2) + Math.pow(distance_x_left, 2));
 		
 		double distance_right;
 		double distance_x_right = monster_position[0] - player_position[0];
-		double distance_y_right = monster_position[1]-1 - player_position[1];
+		double distance_y_right = monster_position[1]+1 - player_position[1];
 		distance_right = Math.sqrt(Math.pow(distance_y_right, 2) + Math.pow(distance_x_right, 2));
 		
 		if(distance_up < distance_down && distance_up < distance_right && distance_up < distance_left) {
@@ -66,7 +66,7 @@ public class Monster {
 		} else if( distance_right < distance_up && distance_right < distance_down && distance_right < distance_left ) {
 			if (monster_position[1]<grid_size)
 				monster_position[1] += 1;
-		}  else {
+		}  else if( distance_left < distance_up && distance_left < distance_down &&  distance_left < distance_right ){
 			if (monster_position[1]!=0)
 				monster_position[1] -= 1;
 		}
