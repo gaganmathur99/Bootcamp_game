@@ -8,7 +8,7 @@ public class Monster_1 {
 	public String Greet;
 	public static int[] monster_position = new int[2];
 
-	public Monster(String name, String Greet) {
+	public Monster_1(String name, String Greet) {
 		this.name = name;
 		this.Greet = Greet;
 		monster_position = setMonsterPosition();
