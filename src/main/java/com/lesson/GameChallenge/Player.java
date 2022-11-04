@@ -53,6 +53,8 @@ public class Player {
 		} else {
 			System.out.println("Invalid Move");
 		}
+		Board b1 = new Board();
+		b1.setBoard();
 
 	}
 

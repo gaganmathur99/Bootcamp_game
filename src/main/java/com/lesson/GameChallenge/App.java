@@ -22,16 +22,18 @@ public class App {
 		System.out.println(globalGridSize + " - grid size initilaized");
 
 		Player p1 = new Player(player_name);
-
 		Treasure tres = new Treasure();
 		Monster Grinch = new Monster("mon", "mons");
 		Board b1 = new Board();
 		
-		b1.setBoard();
+		int count = 0;
 
 		while (Player.game_win() != true && Player.game_lose() != true) {
 
-
+			count++;
+			if (count % 3 == 0) {
+				Grinch.setMonsterPosition();
+			}
 			p1.updatePlayerPosition(globalGridSize);
 
 			Treasure.player_distance();

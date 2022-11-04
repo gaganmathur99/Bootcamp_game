@@ -17,10 +17,10 @@ public class Board {
 	public void generateBoard(int[] getposition, int[] treasurePosition, int[] monsterPosition) {
 		int board[][] = setBoard();
 		int[] test1 = getposition;
-		int[] test2 = treasurePosition;
+		//int[] test2 = treasurePosition;
 		int[] test3 = monsterPosition;
 		board[test1[0]][test1[1]] = 1;
-		board[test2[0]][test2[1]] = 2;
+		//board[test2[0]][test2[1]] = 2;
 		board[test3[0]][test3[1]] = 3;
 
 		for (int i = 0; i < board.length; i++) {
@@ -34,10 +34,10 @@ public class Board {
 	public void updateBoard(int[] getposition, int[] treasurePosition, int[] monsterPosition) {
 		int board[][] = setBoard();
 		int[] test1 = getposition;
-		int[] test2 = treasurePosition;
+		//int[] test2 = treasurePosition;
 		int[] test3 = monsterPosition;
 		board[test1[0]][test1[1]] = 1;
-		board[test2[0]][test2[1]] = 2;
+		//board[test2[0]][test2[1]] = 2;
 		board[test3[0]][test3[1]] = 3;
 
 		for (int i = 0; i < board.length; i++) {
