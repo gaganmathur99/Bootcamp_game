@@ -30,10 +30,11 @@ public class App {
 
 		while (Player.game_win() != true && Player.game_lose() != true) {
 
-			count++;
-			if (count % 3 == 0) {
-				Grinch.setMonsterPosition();
-			}
+//			count++;
+//			if (count % 3 == 0) {
+//				Grinch.setMonsterPosition();
+//			}
+			Grinch.killPlayer();
 			p1.updatePlayerPosition(globalGridSize);
 
 			Treasure.player_distance();
