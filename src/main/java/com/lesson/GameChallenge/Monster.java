@@ -49,7 +49,7 @@ public class Monster {
 
 		double distance_left;
 		double distance_x_left = monster_position[0] - player_position[0];
-		double distance_y_left = monster_position[1]-1 - player_position[1];
+		double distance_y_left = monster_position[1]+1 - player_position[1];
 		distance_left = Math.sqrt(Math.pow(distance_y_left, 2) + Math.pow(distance_x_left, 2));
 		
 		double distance_right;
